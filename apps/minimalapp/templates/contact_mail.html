@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact complete</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+  </head>
+
+  <body>
+    <p>Dear {{ username }}</p>
+    <p>Thank you for your contact. Here is your inquiry details.</p>
+    <p>Inquiry details</p>
+    <p>{{ description }}</p>
+  </body>
+</html>

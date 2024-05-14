@@ -8,5 +8,13 @@
 
   <body>
     <h1>Contact complete</h1>
+
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li class="flash">{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
   </body>
 </html>
