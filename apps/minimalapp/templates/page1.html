@@ -1,102 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Name</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My profile</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 20px;
-            box-shadow: 0 0 100px rgba(244, 0, 0, 0.1);
-        }
-
-        .images-container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .profile-img {
-            width: 200px;
-            border-radius: 50%;
-            margin: 0 auto;
-            display: block;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .github-link {
-            color: #0366d6;
-        }
-
-        .btn-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            background-color: #ffea00cf;
-            color: #4609b8da;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <h1>Introduce Myself</h1>
-    </header>
-    <div class="container">
-        <div class="images-container">
-            <img src="https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1"
-                alt="Python" class="profile-img">
-            <img src="https://media.licdn.com/dms/image/D4D12AQE6U86EjeXXcQ/article-cover_image-shrink_600_2000/0/1657116588165?e=2147483647&v=beta&t=AJRPDSbjFKmL4hIaDJcKfsn3zZ_Gu-EjB5RgTYHWDRY"
-                alt="Pandas" class="profile-img">
-            <img src="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/qrugo0ng5eo6xmzweail"
-                alt="scikit-learn" class="profile-img">
-        </div>
-        <div class="content">
-            <h2>My name is {{name}}. I am currently in my third year of studying as an international student at Shizuoka
-                University.</h2>
-            <p>I am deeply interested in Mathematics, Programming, and Networking. My passion, however, lies strongly in
-                the fields of Machine Learning and Deep Learning.
-                These areas of study captivate me and fuel my desire to learn and grow.</p>
-            <p>You can follow my projects at <a href="https://github.com/Kudodxd" class="github-link">GitHub</a>.</p>
-        </div>
-    </div>
-    <ul>
-        <li><strong>My University: </strong><a href="https://www.shizuoka.ac.jp">静岡大学</a></li>
-        <li><strong>My Department: </strong><a
-                href="https://www.eng.shizuoka.ac.jp/department/systems/">工学部数理システム工学科</a></li>
-        <li><strong>My Program: </strong><a href="https://www.abp.icsu.shizuoka.ac.jp/eng/">Asia Brige Program</a></li>
-    </ul>
-    <div class="btn-container">
-        <a href="page2.html" class="btn">Here is how I study</a>
-    </div>
-</body>
-
+  <body>
+    <h1>Name : {{name}}</h1>
+  </body>
 </html>
