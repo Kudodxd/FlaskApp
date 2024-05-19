@@ -1,21 +1,25 @@
-from email_validator import (
-    validate_email,
-    EmailNotValidError,
-)
 from flask import (
     Flask,
     render_template,
     url_for,
-    current_app,
-    g,
+    # current_app,
+    # g,
     request,
     redirect,
     flash,
+    make_response,
+    session,
 )
+from email_validator import (
+    validate_email,
+    EmailNotValidError,
+)
+# Mail function
 from flask_mail import (
     Mail,
     Message,
 )
+# Debug toolbar
 from flask_debugtoolbar import DebugToolbarExtension
 import logging
 import os
@@ -71,30 +75,41 @@ def show_name(name):
     return render_template("index.html", name=name)
 
 
-with app.test_request_context():
-    # /
-    print(url_for("index"))
-    # hello/world
-    print(url_for("hello-endpoint", name="world"))
-    # /name/minh?page=1
-    print(url_for("show_name", name="minh", page="1"))
-    # Output true
-    print(request.args.get("updated"))
+# with app.test_request_context():
+#     # /
+#     print(url_for("index"))
+
+#     # hello/world
+#     print(url_for("hello-endpoint", name="world"))
+
+#     # /name/minh?page=1
+#     print(url_for("show_name", name="minh", page="1"))
+
+#     # Output true
+#     print(request.args.get("updated"))
 
 # print(current_app)
 
-ctx = app.app_context()
-ctx.push()
+# ctx = app.app_context()
+# ctx.push()
 
-print(current_app.name)
+# print(current_app.name)
 
-g.connection = "connection"
-print(g.connection)
+# g.connection = "connection"
+# print(g.connection)
 
 
 @app.route("/contact")
 def contact():
-    return render_template("contact.html")
+    # Create a respone object
+    respone = make_response(render_template("contact.html"))
+
+    # Setup cookie
+    respone.set_cookie("Flaskbook key", "flaskbook value")
+
+    # Setup session
+    session["username"] = "minh"
+    return respone
 
 
 @app.route("/contact/complete",
