@@ -3,20 +3,27 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit"
   },
-  "flake8.args": ["--max-line-length=88"],
+  "flake8.args": [
+    "--max-line-length=88"
+  ],
   "mypy.enabled": true,
+  "mypy.runUsingActiveInterpreter": false,
   "mypy.debugLogging": false,
+  "mypy.dmypyExecutable": "${workspaceFolder}\\venv\\Scripts\\dmypy.exe",
   "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
   "terminal.integrated.environmentChangesIndicator": "warnonly",
   "pylint.args": [
     "\"pylint.args\": [\"--disable=C0114\", \"--max-line-length=120\"",
     "\"pylint.args\": [\"--disable=C0116\", \"--max-line-length=120\""
   ],
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "ms-python.vscode-pylance",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
-  }
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
 }
