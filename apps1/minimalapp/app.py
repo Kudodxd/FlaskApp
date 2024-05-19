@@ -24,7 +24,6 @@ from flask_debugtoolbar import DebugToolbarExtension
 import logging
 import os
 
-# Install Flask class
 app = Flask(__name__)
 # Add SECRET_KEY for session -> why must use session? -> to export flash messages
 app.config["SECRET_KEY"] = "3425nkb4356nkb356kh235hk6"
