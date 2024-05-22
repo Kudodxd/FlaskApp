@@ -1,28 +1,23 @@
-from flask import (
-    Flask,
-    render_template,
-    url_for,
-    # current_app,
-    # g,
-    request,
-    redirect,
-    flash,
-    make_response,
-    session,
-)
-from email_validator import (
-    validate_email,
-    EmailNotValidError,
-)
-# Mail function
-from flask_mail import (
-    Mail,
-    Message,
-)
-# Debug toolbar
-from flask_debugtoolbar import DebugToolbarExtension
 import logging
 import os
+
+from email_validator import EmailNotValidError, validate_email
+from flask import (  # current_app,; g,
+    Flask,
+    flash,
+    make_response,
+    redirect,
+    render_template,
+    request,
+    session,
+    url_for,
+)
+
+# Debug toolbar
+from flask_debugtoolbar import DebugToolbarExtension
+
+# Mail function
+from flask_mail import Mail, Message
 
 app = Flask(__name__)
 # Add SECRET_KEY for session -> why must use session? -> to export flash messages
@@ -55,15 +50,12 @@ mail = Mail(app)
 
 
 # Mapping function that excutes with URL
-@app.route("/",
-           methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def index():
     return "Hello, Flaskbook!"
 
 
-@app.route("/hello/<name>",
-           methods=["GET", "POST"],
-           endpoint="hello-endpoint")
+@app.route("/hello/<name>", methods=["GET", "POST"], endpoint="hello-endpoint")
 def hello(name):
     return f"Hello, {name}!"
 
@@ -111,8 +103,7 @@ def contact():
     return respone
 
 
-@app.route("/contact/complete",
-           methods=["GET", "POST"])
+@app.route("/contact/complete", methods=["GET", "POST"])
 def contact_complete():
     if request.method == "POST":
         # Get values from form
