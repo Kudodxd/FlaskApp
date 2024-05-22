@@ -1,6 +1,6 @@
 {
   // Python env
-  // "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
   "python.terminal.activateEnvironment": true,
   "python.defaultInterpreterPath": "${workspaceFolder}\\venv\\Scripts\\python.exe",
   // Black-formatter
@@ -32,7 +32,6 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "python.languageServer": "Pylance",
   "python.experiments.optOutFrom": [
     "pythonTerminalEnvVarActivation"
   ]
