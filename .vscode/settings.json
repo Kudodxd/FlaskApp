@@ -1,8 +1,11 @@
 {
   // Python env
+  "python.defaultInterpreterPath": "${workspaceFolder}\\venv\\Scripts\\python.exe",
   "python.terminal.activateEnvInCurrentTerminal": true,
   "python.terminal.activateEnvironment": true,
-  "python.defaultInterpreterPath": "${workspaceFolder}\\venv\\Scripts\\python.exe",
+  "python.experiments.optOutFrom": [
+    "pythonTerminalEnvVarActivation"
+  ],
   // Black-formatter
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "ms-python.black-formatter",
@@ -25,14 +28,17 @@
   "flake8.importStrategy": "fromEnvironment",
   // mypy
   "mypy.enabled": true,
-  // "mypy.runUsingActiveInterpreter": false,
-  // "mypy.debugLogging": false,
+  "mypy.runUsingActiveInterpreter": true,
+  "mypy.debugLogging": false,
   "mypy.dmypyExecutable": "${workspaceFolder}\\venv\\Scripts\\dmypy.exe",
   // json file formatting
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "python.experiments.optOutFrom": [
-    "pythonTerminalEnvVarActivation"
-  ]
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }

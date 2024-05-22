@@ -3,9 +3,12 @@ from pathlib import Path
 from flask import Flask
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
+from flask_wtf import CSRFProtect
 
 # Object db
 db = SQLAlchemy()
+
+csrf = CSRFProtect()
 
 
 def create_app():
@@ -14,10 +17,16 @@ def create_app():
 
     # Setup app config
     app.config.from_mapping(
-        SECRET_KEY="23h234gj23jgh42v3jgh",
-        SQLALCHEMY_DATABASE_URI=f"sqlite:///{Path(__file__).parent.parent / 'local.sqlite'}",
+        SECRET_KEY="2AZSMss3p5QPbcY2hBs",
+        SQLALCHEMY_DATABASE_URI="sqlite:///"
+        + str(Path(Path(__file__).parent.parent, "local.sqlite")),
         SQLALCHEMY_TRACK_MODIFICATIONS=False,
+        # Output console log of SQL
+        SQLALCHEMY_ECHO=True,
+        WTF_CSRF_SECRET_KEY="Aewurfgiasaljdc27b24rhid",
     )
+
+    csrf.init_app(app)
 
     # Align app to SQLAlchemy
     db.init_app(app)
