@@ -1,29 +1,39 @@
 {
+  // Python env
+  // "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.terminal.activateEnvironment": true,
+  "python.defaultInterpreterPath": "${workspaceFolder}\\venv\\Scripts\\python.exe",
+  // Black-formatter
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "ms-python.black-formatter",
+  "black-formatter.importStrategy": "fromEnvironment",
+  "editor.defaultFoldingRangeProvider": "ms-python.black-formatter",
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit"
   },
+  // isort
+  "isort.check": true,
+  "isort.importStrategy": "fromEnvironment",
+  "isort.args": [
+    "--profile",
+    "black"
+  ],
+  // flake8
   "flake8.args": [
-    "--max-line-length=88"
+    "--max-line-length=88",
   ],
+  "flake8.importStrategy": "fromEnvironment",
+  // mypy
   "mypy.enabled": true,
-  "mypy.runUsingActiveInterpreter": false,
-  "mypy.debugLogging": false,
+  // "mypy.runUsingActiveInterpreter": false,
+  // "mypy.debugLogging": false,
   "mypy.dmypyExecutable": "${workspaceFolder}\\venv\\Scripts\\dmypy.exe",
-  "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
-  "terminal.integrated.environmentChangesIndicator": "warnonly",
-  "pylint.args": [
-    "\"pylint.args\": [\"--disable=C0114\", \"--max-line-length=120\"",
-    "\"pylint.args\": [\"--disable=C0116\", \"--max-line-length=120\""
-  ],
-  "editor.defaultFormatter": "ms-python.vscode-pylance",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
+  // json file formatting
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "python.languageServer": "Pylance",
+  "python.experiments.optOutFrom": [
+    "pythonTerminalEnvVarActivation"
+  ]
 }
