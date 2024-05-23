@@ -15,7 +15,7 @@ class UserForm(FlaskForm):
     )
     # Label and validator of email attribute in user form
     email = StringField(
-        "Mail address",
+        "Email address",
         validators=[
             DataRequired(message="Email is required."),
             Email(message="Please enter in email address format."),

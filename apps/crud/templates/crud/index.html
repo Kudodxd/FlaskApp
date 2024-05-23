@@ -3,11 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{url_for('crud.static', filename='style.css')}}" />
-    <title>CRUD</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('crud.static', filename='style.css')}}"
+    />
+    <title>Users table</title>
   </head>
 
   <body>
-    <p class="crud">CRUD application</p>
+    <h2>USERS TABLE</h2>
+
+    <a href="{{url_for('crud.create_user')}}">New registration</a>
+
+    <table>
+      <tr>
+        <th>UserID</th>
+        <th>Username</th>
+        <th>Email</th>
+      </tr>
+      {% for user in users %}
+      <tr>
+        <td>
+          <a href="{{ url_for('crud.edit_user', user_id=user.id) }}"
+            >{{user.id}}</a
+          >
+        </td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+      {% endfor %}
+    </table>
   </body>
 </html>
