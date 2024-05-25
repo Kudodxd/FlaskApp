@@ -27,7 +27,7 @@ h2 {
 /* Links */
 a {
   display: block;
-  /* text-align: center; */
+  text-align: center;
   color: #3498db;
   text-decoration: none;
   margin-top: 10pt;
