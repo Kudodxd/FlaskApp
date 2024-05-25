@@ -4,13 +4,13 @@ from wtforms.validators import DataRequired, Email, length
 
 
 # Class creates and edits new users
-class UserForm(FlaskForm):
+class SignUpForm(FlaskForm):
     # Label and validator of username attribute in user form
     username = StringField(
         "User name",
         validators=[
             DataRequired(message="Username is required."),
-            length(max=30, message="Please enter within 30 characters."),
+            length(1, 30, message="Please enter within 30 characters."),
         ],
     )
     # Label and validator of email attribute in user form
@@ -26,4 +26,18 @@ class UserForm(FlaskForm):
         "Password", validators=[DataRequired(message="Password is required.")]
     )
     # Submit text of user form
-    submit = SubmitField("Register")
+    submit = SubmitField("Sign up")
+
+
+class LoginForm(FlaskForm):
+    email = StringField(
+        "Email address",
+        validators=[
+            DataRequired(message="Email is required."),
+            Email(message="Please enter in email address format."),
+        ],
+    )
+    password = PasswordField(
+        "Password", validators=[DataRequired(message="Password is required.")]
+    )
+    submit = SubmitField("Login")
