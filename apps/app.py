@@ -1,5 +1,6 @@
 # from pathlib import Path
 from flask import Flask
+from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import CSRFProtect
@@ -10,6 +11,12 @@ from apps.config import config
 db = SQLAlchemy()
 
 csrf = CSRFProtect()
+
+login_manager = LoginManager()
+# Specify endpoint to redirect when not logged in
+login_manager.login_view = "auth.signup"
+# Specify message that show when logged in
+login_manager.login_message = ""
 
 
 def create_app(config_key):
@@ -38,10 +45,15 @@ def create_app(config_key):
     # Align app to Migrate
     Migrate(app, db)
 
+    login_manager.init_app(app)
     # Import views from crud package
     from apps.crud import views as crud_views
 
     # Register crud of view to the app using register_blueprint
     app.register_blueprint(crud_views.crud, url_prefix="/crud")
+
+    from apps.auth import views as auth_views
+
+    app.register_blueprint(auth_views.auth, url_prefix="/auth")
 
     return app
