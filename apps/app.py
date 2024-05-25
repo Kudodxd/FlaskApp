@@ -47,13 +47,19 @@ def create_app(config_key):
 
     login_manager.init_app(app)
     # Import views from crud package
+    # Register crud of view to the app using register_blueprint
     from apps.crud import views as crud_views
 
-    # Register crud of view to the app using register_blueprint
     app.register_blueprint(crud_views.crud, url_prefix="/crud")
 
+    # Register auth of views
     from apps.auth import views as auth_views
 
     app.register_blueprint(auth_views.auth, url_prefix="/auth")
+
+    # Register dt(detector)
+    from apps.detector import views as dt_views
+
+    app.register_blueprint(dt_views.dt)
 
     return app

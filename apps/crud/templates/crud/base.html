@@ -11,7 +11,10 @@
   </head>
 
   <body>
-    <div>
+    <div class="auth">
+      <a href="{{url_for('detector.index')}}">Project</a>
+      <a href="{{url_for('crud.users')}}">Users list</a>
+      <a href="{{url_for('crud.create_user')}}">New registration</a>
       {% if current_user.is_authenticated %}
       <p>
         <span>{{ current_user.username }}</span>

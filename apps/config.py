@@ -6,6 +6,7 @@ basedir = Path(__file__).parent.parent
 class BaseConfig:
     SECRET_KEY = "24h5jh25j52GJV%UTGV&G%23"
     WTF_CSRF_SECRET_KEY = "Asdauif4ihv89nsib26d"
+    UPLOAD_FOLDER = str(Path(basedir, "apps", "images"))
 
 
 class LocalConfig(BaseConfig):
