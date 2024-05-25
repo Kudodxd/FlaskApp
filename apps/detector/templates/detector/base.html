@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>detector</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- Create Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      　
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('detector.index') }}"
+          >detector</a
+        >
+        <a href="{{url_for('crud.users')}}">Users list</a>
+        <ul class="navbar-nav">
+          {% if current_user.is_authenticated %}
+          <li class="nav-item">
+            <span class="nav-link">{{ current_user.username }}</span>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url_for('auth.logout') }}" class="nav-link">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('auth.signup') }}">Sign up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('auth.login') }}">Sign in</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+
+    <section class="container">{% block content %}{% endblock %}</section>
+  </body>
+</html>

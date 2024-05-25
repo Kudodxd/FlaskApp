@@ -17,11 +17,14 @@ h2 {
 }
 
 .container {
+  display: block;
   width: 50%;
   margin: 0 auto;
+  margin-top: 20px;
   padding: 20px;
+  border-radius: 20px;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(178, 0, 0, 0.1);
+  box-shadow: 0 0 100px rgba(178, 0, 0, 0.1);
 }
 
 /* Links */
@@ -113,4 +116,14 @@ span[style="color: red"] {
 
 .form-group input[type="submit"].delete:hover {
   background-color: #c9302c;
+}
+
+.auth {
+  display: block;
+  width: 20%;
+  background-color: hsla(124, 98%, 61%, 0.429);
+  border-radius: 50px;
+  border-color: blue;
+  padding: 10px;
+  text-align: center;
 }
