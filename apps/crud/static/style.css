@@ -53,11 +53,6 @@ header {
   color: #0366d6;
 }
 
-.btn-container {
-  text-align: center;
-  margin-top: 20px;
-}
-
 /* .btn {
   padding: 10px 20px;
   background-color: #ffea00cf;
@@ -84,6 +79,11 @@ header {
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
 .btn-green {
   color: #fff;
   background-color: #4caf50;
@@ -95,6 +95,7 @@ header {
   background-color: #45a049;
   border-color: #45a049;
 }
+
 .crud {
   font-style: italic;
 }
