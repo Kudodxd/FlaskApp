@@ -15,3 +15,7 @@ class UpLoadImageForm(FlaskForm):
 
 class DetectorForm(FlaskForm):
     submit = SubmitField("Detect")
+
+
+class DeleteForm(FlaskForm):
+    submit = SubmitField("Delete")
