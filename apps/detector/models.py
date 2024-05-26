@@ -16,7 +16,6 @@ class UserImage(db.Model):
         default=datetime.now,
         onupdate=datetime.now,
     )
-<<<<<<< HEAD
 
 
 class UserImageTag(db.Model):
@@ -30,5 +29,3 @@ class UserImageTag(db.Model):
         default=datetime.now,
         onupdate=datetime.now,
     )
-=======
->>>>>>> 82293fd10c1e14776dacbe5812ed86502a97928b
